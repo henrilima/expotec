@@ -2,7 +2,6 @@ const Shorten = require('shorten-firebase.realtime-database');
 const firebase = require('firebase');
 const express = require("express");
 const path = require("path");
-require("dotenv").config();
 
 const firebaseConfig = {
     apiKey: "AIzaSyAmJTth6czuf4feaQusCqj4-4kBwnY0lP4",
