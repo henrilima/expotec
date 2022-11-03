@@ -250,14 +250,13 @@ async function finish() {
         document.getElementById('title-main').innerHTML = "<span class='emphasis'>Obrigado</span> pela avaliação!";
         document.getElementById('subtitle-main').innerHTML = "Sua ajuda é muito importante para melhorarmos nossos projetos!";
 
-        setInterval(() => {
+        setTimeout(() => {
             document.getElementById('emojis').style.display = "none";
             document.getElementById('title-main').innerHTML = "EXPOTEC - Avaliação do Evento";
             document.getElementById('subtitle-main').innerHTML = "Que tal avaliar a sua experiência na nossa EXPOTEC? É simples e demora apenas alguns segundinhos. ;D";
             const avaliacao = document.getElementById("start");
             avaliacao.style.animation = "fade-up 1s ease forwards";
-            const intervalo = setTimeout(() => (avaliacao.style.animation = "none"), 1200);
-            clearInterval(intervalo, 1250);
+            setTimeout(() => (avaliacao.style.animation = "none"), 1000);
         }, 8000);
     }, 200);
 
