@@ -75,7 +75,7 @@ div.numbers,
 div.genders,
 div.ages,
 div.locale-selects {
-    margin: 6rem 0;
+    margin: 4rem 0;
     width: 80%;
     display: flex;
     justify-content: space-evenly;
