@@ -1,0 +1,321 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+:root {
+    --background: #f5f5f5;
+    --grey: #c1c1c1;
+    --dgrey: #c9c9c9;
+    --udgrey: #5a5a5a;
+    --blue: #1e5eaa;
+    --green: #549943;
+    --red: #e55f5f;
+    --disable: #9f9f9f;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+body,
+body section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button.main-button {
+    padding: 0.3rem 1.5rem;
+    font-size: 1.15rem;
+    border-radius: 0.4rem;
+    border: none;
+    margin-top: 3rem;
+
+    background-color: var(--blue);
+    color: var(--background);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button.main-button:hover {
+    background-color: var(--blue);
+}
+
+#avaliacao,
+#localidade,
+#genero,
+#idade,
+#final,
+#analytics-two {
+    display: none;
+}
+
+p {
+    font-size: 1.5rem;
+    max-width: 565px;
+    text-align: center;
+}
+
+p.main-subtitle {
+    max-width: 850px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin: 0 0 0.4rem 0;
+}
+
+div.numbers,
+div.genders,
+div.ages,
+div.locale-selects {
+    margin: 6rem 0;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.ages {
+    justify-content: center;
+}
+
+div.ages>* {
+    margin: 0 1rem;
+}
+
+div.locale-selects {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div.number-box,
+div.gender-box,
+button.age-button {
+    background-color: var(--grey);
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 2.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+div.number-box:hover,
+div.gender-box:hover {
+    cursor: pointer;
+}
+
+div.numbers div.number-box {
+    font-size: 2rem;
+}
+
+div.genders div.gender-box {
+    font-size: 2rem;
+}
+
+section.action-buttons {
+    width: 140%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+button.button {
+    width: 12rem;
+    padding: 0.3rem 1.5rem;
+    font-size: 1.15rem;
+    border-radius: 0.4rem;
+    border: none;
+
+    color: var(--background);
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: all 1s;
+    background-size: 200% 200%;
+}
+
+input.age-input[type="text"],
+input.select {
+    border: 2px solid var(--blue);
+    outline: none;
+    background-color: transparent;
+    border-radius: 2rem;
+    height: 40px;
+    width: 20rem;
+    font-size: 1.2rem;
+    padding: 0.2rem 1rem;
+}
+
+input.age-input[type="text"] {
+    width: 100px;
+    text-align: center;
+
+}
+
+select.select {
+    border-radius: 2rem;
+    height: 40px;
+    width: 20rem;
+    font-size: 1rem;
+    padding: 0.2rem 1rem;
+}
+
+select.select:last-child {
+    margin-top: 1rem;
+}
+
+button.age-button {
+    height: 100% !important;
+    width: 40px !important;
+    font-size: 1.4rem;
+    background-color: var(--blue);
+    color: var(--background);
+    border: none;
+    cursor: pointer;
+}
+
+.cancel {
+    background-color: var(--red);
+}
+
+.back {
+    background-color: var(--udgrey);
+}
+
+.next {
+    background-color: var(--blue);
+}
+
+.finish {
+    background-color: var(--green);
+}
+
+.disable {
+    background-color: var(--disable);
+}
+
+.button-active {
+    color: var(--background);
+    background: linear-gradient(130deg,
+            rgba(2, 143, 219, 0.6),
+            rgba(41, 22, 104, 0.6));
+    animation: button-background 4s ease infinite, appears 0.5s ease forwards;
+}
+
+.woman-button-active {
+    background: linear-gradient(130deg,
+            rgba(219, 2, 150, 0.6),
+            rgba(104, 22, 62, 0.6)) !important;
+}
+
+.other-button-active {
+    background: linear-gradient(130deg,
+            rgba(219, 2, 150, 0.6),
+            rgba(2, 143, 219, 0.6)) !important;
+}
+
+.emojis {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 4rem;
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+}
+
+.emoji {
+    font-size: 5rem;
+    color: #101010 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.emphasis {
+    color: #1e5eaa;
+}
+
+.emphasis-woman {
+    color: #db0296;
+}
+
+.emphasis-others {
+    color: #d2a637;
+}
+
+.e1,
+.e3 {
+    top: 8px;
+    font-size: 4.2rem;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.e1 {
+    left: -2.8rem;
+    background: -webkit-linear-gradient(270deg, #f5f5f5, rgba(16, 16, 16, 0.2)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.e3 {
+    left: 3.7rem;
+    background: -webkit-linear-gradient(270deg, #f5f5f5, rgba(16, 16, 16, 0.2)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.e2 {
+    z-index: 2;
+    background: -webkit-linear-gradient(270deg, rgba(2, 143, 219), rgba(41, 22, 104)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0.1;
+        margin-bottom: 4rem;
+    }
+
+    100% {
+        opacity: 1;
+        margin-bottom: 0;
+    }
+}
+
+@keyframes appears {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes button-background {
+    0% {
+        background-position: 10% 0%;
+    }
+
+    50% {
+        background-position: 91% 100%;
+    }
+
+    100% {
+        background-position: 10% 0%;
+    }
+}

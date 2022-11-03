@@ -1,0 +1,33 @@
+<section id="idade">
+    <h1>EXPOTEC - Avaliação do Evento</h1>
+    <p>
+        Nos conte um pouco sobre você. Primeiro, quantos anos você tem?
+    </p>
+    <div class="ages">
+        <input
+            type="text"
+            name="idade"
+            id="age-input"
+            min="10"
+            max="90"
+            class="age-input"
+            value="14"
+        />
+        <button class="age-button" onclick="changeAge(1)">+</button>
+        <button class="age-button" onclick="changeAge('-1')">-</button>
+    </div>
+
+    <section class="action-buttons">
+        <button type="submit" class="button cancel" onclick="cancel('idade')">
+            Cancelar
+        </button>
+        <button type="submit" class="button disable">Voltar</button>
+        <button
+            type="submit"
+            class="button next"
+            onclick="setValues('idade'); switchSection('idade', 'genero');"
+        >
+            Próximo
+        </button>
+    </section>
+</section>

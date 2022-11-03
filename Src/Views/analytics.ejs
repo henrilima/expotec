@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Análise Geral das Avaliações</title>
+</head>
+
+<body>
+    <% let values=0; let quantity=0; let generos=[]; let escolaridade=[]; let cidades=[]; %>
+        <% if (data !=undefined || data !=null) { %>
+            <%- data.forEach(element=> {
+                values += element.satisfacao;
+                generos.push(element.sexo);
+                escolaridade.push(element.escolaridade);
+                cidades.push(element.cidade);
+                quantity = quantity + 1;
+                })
+                %>
+
+                <section id="analytics-one">
+                    <h1>Média dos Dados Disponíveis</h1>
+                    <p>Média das avaliações geral: <span class="emphasis">
+                            <%- (values / quantity).toFixed(2) %>
+                        </span></p>
+                    <br>
+                    <p>Quantidade de pessoas por gênero:</p>
+                    <ul style="list-style: none; text-align: center;">
+                        <% if (generos.filter(x=> x === "homem").length > 0) { %>
+                            <li>
+                                <%- generos.filter(x=> x === "homem").length %> pessoa(s) é (são) do gênero <span
+                                        class="emphasis">masculino</span>
+                            </li>
+                            <% } %>
+                                <% if (generos.filter(x=> x === "mulher").length > 0) { %>
+                                    <li>
+                                        <%- generos.filter(x=> x === "mulher").length %> pessoa(s) é (são) do gênero
+                                            <span class="emphasis-woman">feminino</span>
+                                    </li>
+                                    <% } %>
+                                        <% if (generos.filter(x=> x === "outro").length > 0) { %>
+                                            <li>
+                                                <%- generos.filter(x=> x === "outro").length %> pessoa(s) preferiram se
+                                                    identificar como <span class="emphasis-others">outro</span>
+                                            </li>
+                                            <% } %>
+                    </ul>
+                    <br>
+                    <p>Quantitativo de escolaridades:</p>
+                    <ul style="list-style: none; text-align: center;">
+                        <% if (escolaridade.filter(x=> x === "fundamental").length > 0) { %>
+                            <li>
+                                <%- escolaridade.filter(x=> x === "fundamental").length %> pessoa(s) tem como nível de
+                                    escolaridade o <span class="emphasis">ensino fundamental</span>
+                            </li>
+                            <% } %>
+                                <% if (escolaridade.filter(x=> x === "medio").length > 0) { %>
+                                    <li>
+                                        <%- escolaridade.filter(x=> x === "medio").length %> pessoa(s) tem como nível de
+                                            escolaridade o <span class="emphasis">ensino médio</span>
+                                    </li>
+                                    <% } %>
+                                        <% if (escolaridade.filter(x=> x === "superior").length > 0) { %>
+                                            <li>
+                                                <%- escolaridade.filter(x=> x === "superior").length %> pessoa(s) tem
+                                                    como nível de
+                                                    escolaridade o <span class="emphasis">ensino superior</span>
+                                            </li>
+                                            <% } %>
+                                                <% if (escolaridade.filter(x=> x === "pos").length > 0) { %>
+                                                    <li>
+                                                        <%- escolaridade.filter(x=> x === "pos").length %> pessoa(s) tem
+                                                            como nível de
+                                                            escolaridade o <span class="emphasis">ensino superior com
+                                                                pós graduação</span>
+                                                    </li>
+                                                    <% } %>
+                                                        <% if (escolaridade.filter(x=> x === "outro").length > 0) { %>
+                                                            <li>
+                                                                <%- escolaridade.filter(x=> x === "outro").length %>
+                                                                    pessoa(s) tem como nível de
+                                                                    escolaridade o <span class="emphasis">outra</span>
+                                                            </li>
+                                                            <% } %>
+                    </ul>
+
+                    <br><br>
+
+                    <button type="submit" class="button next" style="font-size: 1rem;"
+                        onclick="switchSection('analytics-one', 'analytics-two');">
+                        Cidades
+                    </button>
+                </section>
+                <section id="analytics-two">
+                    <h1>Média dos Dados Disponíveis</h1>
+                    <p>Quantidade de pessoas por cidade:</p>
+
+                    <br>
+
+                    <!-- <ul style="list-style: none; text-align: center;">
+                        <li>
+                            <%- cidades.filter(x=> x === "surubim").length %> pessoa(s) é (são) de <span
+                                    class="emphasis">Surubim</span>
+                        </li>
+                        <li>
+                            <%- cidades.filter(x=> x === "bom-jardim").length %> pessoa(s) é (são) de <span
+                                    class="emphasis">Bom-Jardim</span>
+                        </li>
+                        <li>
+                            <%- cidades.filter(x=> x === "joao-alfredo").length %> pessoa(s) é (são) de <span
+                                    class="emphasis">João Alfredo</span>
+                        </li>
+                        <li>
+                            <%- cidades.filter(x=> x === "limoeiro").length %> pessoa(s) é (são) de <span
+                                    class="emphasis">Limoeiro</span>
+                        </li>
+                        <li>
+                            <%- cidades.filter(x=> x === "orobo").length %> pessoa(s) é (são) de <span
+                                    class="emphasis">Orobó</span>
+                        </li>
+                        <li>
+                            <%- cidades.filter(x=> x === "santa-maria-do-cambuca").length %> pessoa(s) é (são) de <span
+                                    class="emphasis">Santa Maria do Cambucá</span>
+                        </li>
+                        <li>
+                            <%- cidades.filter(x=> x === "frei-miguelinho").length %> pessoa(s) é (são) de <span
+                                    class="emphasis">Frei Miguelinho</span>
+                        </li>
+                        <li>
+                            <%- cidades.filter(x=> x === "vertente-do-lerio").length %> pessoa(s) é (são) de <span
+                                    class="emphasis">Vertente do Lério</span>
+                        </li>
+                        <li>
+                            <%- cidades.filter(x=> x === "vertentes").length %> pessoa(s) é (são) de <span
+                                    class="emphasis">Vertentes</span>
+                        </li>
+                        <li>
+                            <%- cidades.filter(x=> x === "santa-cecilia").length %> pessoa(s) é (são) de <span
+                                    class="emphasis">Santa Cecília</span>
+                        </li>
+                        <li>
+                            <%- cidades.filter(x=> x === "outra").length %> pessoa(s) é (são) de <span
+                                    class="emphasis">outra localidade</span>
+                        </li>
+                    </ul> -->
+
+                    <br><br>
+
+                    <button type="submit" class="button next" style="font-size: 1rem;"
+                        onclick="switchSection('analytics-two', 'analytics-one');">
+                        Outros Dados
+                    </button>
+                </section>
+                <% } else { %>
+                    <h1>Ainda não há dados disponíveis.</h1>
+                    <% } %>
+
+                    
+                        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+                        <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+                        <script src="main.js"></script>
+
+</body>
+
+</html>

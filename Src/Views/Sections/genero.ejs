@@ -1,0 +1,35 @@
+<section id="genero">
+    <h1>EXPOTEC - Avaliação do Evento</h1>
+    <p>Como você se identifica?</p>
+    <div class="genders">
+        <div class="gender-box" genero="homem">
+            <i class="fa-sharp fa-solid fa-person"></i>
+        </div>
+        <div class="gender-box" genero="mulher">
+            <i class="fa-solid fa-person-dress"></i>
+        </div>
+        <div class="gender-box" genero="outro">
+            <i class="fa-solid fa-person-half-dress"></i>
+        </div>
+    </div>
+
+    <section class="action-buttons">
+        <button type="submit" class="button cancel" onclick="cancel('genero')">
+            Cancelar
+        </button>
+        <button
+            type="submit"
+            class="button back"
+            onclick="switchSection('genero', 'idade')"
+        >
+            Voltar
+        </button>
+        <button
+            type="submit"
+            class="button next"
+            onclick="switchSection('genero', 'localidade')"
+        >
+            Próximo
+        </button>
+    </section>
+</section>

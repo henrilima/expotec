@@ -1,0 +1,63 @@
+<section id="localidade">
+    <h1>EXPOTEC - Avaliação do Evento</h1>
+    <p>Qual seu nível de escolaridade e a cidade em que reside?</p>
+    <div class="locale-selects">
+        <select
+            class="select"
+            name="escolaridade"
+            id="schooling-select"
+            required
+        >
+            <option value="none" selected disabled>Escolaridade</option>
+            <option value="fundamental">Ensino Fundamental</option>
+            <option value="medio">Ensino Médio</option>
+            <option value="superior">Ensino Superior</option>
+            <option value="superior">Ensino Superior Pós Graduação</option>
+            <option value="superior">Outro</option>
+        </select>
+        <div>
+            <select class="select" name="cidade" id="city-select" required>
+                <option value="none" selected disabled>
+                    Cidade em que reside
+                </option>
+                <option value="surubim">Surubim</option>
+                <option value="bom-jardim">Bom-Jardim</option>
+                <option value="joao-alfredo">João Alfredo</option>
+                <option value="limoeiro">Limoeiro</option>
+                <option value="orobo">Orobó</option>
+                <option value="santa-maria-do-cambuca">
+                    Santa Maria do Cambucá
+                </option>
+                <option value="frei-miguelinho">Frei Miguelinho</option>
+                <option value="vertente-do-lerio">Vertente do Lério</option>
+                <option value="vertentes">Vertentes</option>
+                <option value="santa-cecilia">Santa Cecília</option>
+                <option value="outra">Outra</option>
+            </select>
+        </div>
+    </div>
+
+    <section class="action-buttons">
+        <button
+            type="submit"
+            class="button cancel"
+            onclick="cancel('localidade')"
+        >
+            Cancelar
+        </button>
+        <button
+            type="submit"
+            class="button back"
+            onclick="switchSection('localidade', 'genero')"
+        >
+            Voltar
+        </button>
+        <button
+            type="submit"
+            class="button next"
+            onclick="setValues('localidade'); switchSection('localidade', 'avaliacao')"
+        >
+            Próximo
+        </button>
+    </section>
+</section>
