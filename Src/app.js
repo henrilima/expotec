@@ -21,7 +21,7 @@ express.urlencoded({
 });
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 80;
 
 app.enable("trust proxy");
 app.set("view engine", "ejs");
@@ -42,6 +42,6 @@ app.get("/viewanalytics", async (req, res, next) => {
     }
 });
 
-app.listen(PORT || 8080, () => {
-    console.log(`[SERVER]: Conectado na porta ${PORT || 8080}.`);
+app.listen(PORT, () => {
+    console.log(`[SERVER]: Conectado na porta ${PORT}.`);
 });
